@@ -6,7 +6,11 @@ import Detail from "@/views/detail.vue";
 
 const router=createRouter({
     history:createWebHashHistory(),
-    routes:[
+    routes: [
+        {
+            path:'/',
+            redirect:'/home'
+        },
         {
             path:'/home',
             component:Home
@@ -20,8 +24,15 @@ const router=createRouter({
             component: News,
             children:[
                 {
+                    name:'detail',
                     path:'detail',
-                    component:Detail
+                    component: Detail,
+                    // props: true//只能用param写法
+                    props(route){
+                        return   route.query
+                        
+                    }
+
                 }
             ]
         }

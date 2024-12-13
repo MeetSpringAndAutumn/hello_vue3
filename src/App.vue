@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <!-- <div>
         <h3 class="App">你好</h3>
     </div>
     <div class="navigation">
@@ -9,17 +9,23 @@
     </div>
     <div class="show">
         <router-view></router-view>
-    </div>
+    </div> -->
     <!-- <person /> -->
+    <Count />
+    <Lovetalk />
 </template>
 <script lang="ts">
 import Person from './components/Person.vue'
 import { RouterLink, RouterView } from 'vue-router'
 import type { routes } from 'vue-router/auto-routes';
+import Count from './components/Count.vue';
+import Lovetalk from './components/Lovetalk.vue';
 export default {
     name: 'App',
     components: {
-        Person
+        Person,
+        Count,
+        Lovetalk
     }
 }
 </script>
